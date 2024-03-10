@@ -1,0 +1,71 @@
+body {
+    background-color: #181818;
+    color: #b3b3b3;
+    margin: 0%;
+}
+
+header {
+    background-color: #404040;
+}
+
+header img {
+    width: 120px;
+    margin: 10px;
+}
+
+header h1 {
+    position: absolute;
+    top: 0%;
+    left: 15%;
+}
+
+section h1 {
+    border-bottom: solid;
+}
+
+footer h1 {
+    border-bottom: solid;
+}
+
+a {
+    margin: 15px;
+}
+
+aside {
+    position: absolute;
+    left: 950px;
+    top: 123px;
+    border: solid;
+}
+
+aside a {
+    color: blueviolet;
+}
+
+.section {
+    width: 70%;
+    margin: 15px;
+}
+
+.conteudo {
+    padding: 10px;
+    text-align: justify;
+}
+
+.sticky {
+    position: fixed;
+    top: 30px;
+}
+
+aside ol {
+    counter-reset: item
+}
+
+aside li {
+    display: block
+}
+
+aside li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item
+}
