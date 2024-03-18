@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 5 (Com JS) </title>
+</head>
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .content {
+        width: 500px;
+        height: 500px;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #000;
+        text-align: center;
+        margin: 0;
+    }
+
+    @media screen and (min-width: 420px) and (max-width: 768px) {
+        .content {
+            background-color: orange;
+        }
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .content {
+            background-color: pink;
+        }
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1080px) {
+        .content {
+            background-color: #FA8072;
+        }
+    }
+
+    @media screen and (min-width: 1081px) and (max-width: 1366px) {
+        .content {
+            background-color: purple;
+        }
+    }
+
+    @media screen and (min-width: 1367px) and (max-width: 1920px) {
+        .content {
+            background-color: yellow;
+        }
+    }
+
+    @media screen and (min-width: 1921px) {
+        .content {
+            background-color: green;
+        }
+    }
+
+
+    h2:before {
+        content: attr(dado-cor);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h2></h2>
+        </div>
+    </div>
+</body>
+<script>
+    const h2 = document.querySelector('h2');
+    const content = document.querySelector('.content');
+
+    function changeColor() {
+        const width = window.innerWidth;
+        let nomeCor = '';
+
+        if (width < 420) {
+            nomeCor = 'Cinza';
+        } else if (width >= 421 && width <= 768) {
+            nomeCor = 'Laranja';
+        } else if (width >= 769 && width <= 1024) {
+            nomeCor = 'Rosa';
+        } else if (width >= 1025 && width <= 1080) {
+            nomeCor = 'Salmão';
+        } else if (width >= 1081 && width <= 1366) {
+            nomeCor = 'Roxo';
+        } else if (width >= 1367 && width <= 1920) {
+            nomeCor = 'Amarelo';
+        } else {
+            nomeCor = 'Verde';
+        }
+
+        h2.textContent = '';
+        h2.setAttribute('dado-cor', nomeCor);
+    }
+
+    window.addEventListener('load', changeColor);
+    window.addEventListener('resize', changeColor);
+</script>
+</body>
+
+</html>

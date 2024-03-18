@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 5</title>
+</head>
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .content {
+        width: 500px;
+        height: 500px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 60px;
+        color: #000;
+        text-align: center;
+        margin: 0;
+        position: relative;
+    }
+
+    @media screen and (max-width:420px) {
+        .content {
+            background-color: gray;
+        }
+
+        h2:before {
+            content: "Cinza"
+        }
+    }
+
+    @media screen and (min-width: 421px) and (max-width: 768px) {
+        .content {
+            background-color: orange;
+        }
+
+        h2:before {
+            content: "Laranja";
+        }
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .content {
+            background-color: pink;
+        }
+
+        h2:before {
+            content: "Rosa";
+        }
+    }
+
+    @media screen and (min-width: 1025px) and (max-width: 1080px) {
+        .content {
+            background-color: #FA8072;
+        }
+
+        h2:before {
+            content: "Salmão";
+        }
+    }
+
+    @media screen and (min-width: 1081px) and (max-width: 1366px) {
+        .content {
+            background-color: purple;
+        }
+
+        h2:before {
+            content: "Roxo";
+        }
+    }
+
+    @media screen and (min-width: 1367px) and (max-width: 1920px) {
+        .content {
+            background-color: yellow;
+        }
+
+        h2:before {
+            content: "Amarelo";
+        }
+    }
+
+    @media screen and (min-width: 1921px) {
+        .content {
+            background-color: green;
+        }
+
+        h2:before {
+            content: "Verde";
+        }
+    }
+
+    h2:before {
+        position: flex;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h2></h2>
+        </div>
+    </div>
+</body>
+
+</html>
