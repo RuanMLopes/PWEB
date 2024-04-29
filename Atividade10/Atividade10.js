@@ -32,7 +32,7 @@ const num1 = parseFloat(prompt("Digite o primeiro número: "));
 const num2 = parseFloat(prompt("Digite o segundo número: "));
 const num3 = parseFloat(prompt("Digite o terceiro número: "));
 
-alert("O maior numero eh: " + maiorNumero(num1, num2, num3));
+alert("O maior numero é: " + maiorNumero(num1, num2, num3));
 
 //função 2:
 
@@ -45,7 +45,7 @@ alert("Números na ordem crescente: " + ordemCrescente(n1, n2, n3));
 //função 3:
 
 const str = prompt("Digite uma palavra ou frase: ");
-alert(str + " Eh palindormo? " + ehPalindromo(str));
+alert(str + " É palindormo? " + ehPalindromo(str));
 
 //função 4:
 
