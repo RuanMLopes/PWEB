@@ -53,7 +53,6 @@ input,
 textarea,
 select {
     width: 90%;
-    /* Define a largura dos campos para ser igual à largura do select */
 }
 
 .add-task-btn {
@@ -86,31 +85,24 @@ td {
     font-weight: bold;
 }
 
-/* Definições de cores para as classes de prioridade */
 .priority-low {
     background-color: #ccc;
-    /* Cor para "Pouco importante" */
 }
 
 .priority-medium {
     background-color: #ffeb3b;
-    /* Cor para "Importante" */
 }
 
 .priority-high {
     background-color: #ff6347;
-    /* Cor para "Urgente" */
 }
 
-/* Definições de cores para as classes de status */
 .status-completed {
     background-color: #4caf50;
-    /* Cor para "Concluída" */
 }
 
 .status-pending {
     background-color: #ffc107;
-    /* Cor para "Pendente" */
 }
 
 .priority {
@@ -120,7 +112,6 @@ td {
     border-radius: 7px;
 }
 
-/* Definições de cores para as classes de status */
 .status {
     color: black;
     border: 2px solid;
@@ -195,19 +186,12 @@ input[type="date"],
 textarea,
 select {
     width: 100%;
-    /* Faz com que os campos ocupem toda a largura disponível */
     padding: 10px;
-    /* Adiciona preenchimento interno */
     margin: 5px 0 20px 0;
-    /* Adiciona espaçamento entre os campos */
     box-sizing: border-box;
-    /* Garante que o padding não exceda a largura do campo */
     border: 1px solid #ccc;
-    /* Adiciona uma borda leve */
     border-radius: 4px;
-    /* Adiciona cantos arredondados */
     font-size: 16px;
-    /* Define o tamanho da fonte */
 }
 
 .form-group input,
@@ -237,7 +221,6 @@ button[type="submit"]:hover {
     background-color: #1c86ee;
 }
 
-/* Edit Task Modal */
 .modal .close-btn {
     background-color: #ff4d4d;
     color: #fff;
@@ -306,7 +289,6 @@ button[type="submit"]:hover {
     cursor: pointer;
 }
 
-/* Estilo para o botão de OK */
 #alertOkButton {
     background-color: #1e90ff;
     color: #fff;
@@ -321,27 +303,18 @@ button[type="submit"]:hover {
     background-color: #1c86ee;
 }
 
-/* Estilo geral para os modais de alerta */
 .alert-modal {
     display: none;
-    /* Esconde o modal por padrão */
     position: fixed;
-    /* Fixa o modal na tela */
     z-index: 2;
-    /* Garante que o modal fique acima de outros elementos */
     left: 0;
     top: 0;
     width: 100%;
-    /* Ocupa toda a largura da tela */
     height: 100%;
-    /* Ocupa toda a altura da tela */
     overflow: auto;
-    /* Habilita rolagem se necessário */
     background-color: rgba(255, 0, 0, 0.4);
-    /* Fundo avermelhado com opacidade */
 }
 
-/* Estilo para o conteúdo do modal de alerta */
 .alert-modal-content {
     background-color: #fff;
     margin: 15% auto;
@@ -353,17 +326,14 @@ button[type="submit"]:hover {
     border-radius: 10px;
     text-align: center;
     animation: blinker 1s linear infinite;
-    /* Animação de piscar */
 }
 
-/* Animação de piscar */
 @keyframes blinker {
     50% {
         opacity: 0;
     }
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
