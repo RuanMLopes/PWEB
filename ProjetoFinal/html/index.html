@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Alerta de Tarefas Próximas do Vencimento -->
+    <div id="alertModal" class="alert-modal">
+        <div class="alert-modal-content">
+            <span id="closeAlert" class="alert-close">&times;</span>
+            <p id="alertMessage"></p>
+            <button id="alertOkButton">OK</button>
+        </div>
+    </div>
+
+
+    <!-- Modal de confirmação de exclusão -->
+    <div id="deleteTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmar exclusão</h2>
+            <p id="deleteTaskMessage">Você tem certeza que vai excluir a tarefa?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" class="confirm-btn">Sim</button>
+                <button id="cancelDelete" class="cancel-btn">Não</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal de edição de tarefa -->
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Alterar tarefa</h2>
+            <form id="editTaskForm">
+                <div class="form-group">
+                    <label for="editTitle">Título</label>
+                    <input type="text" id="editTitle" name="editTitle">
+                </div>
+                <div class="form-group">
+                    <label for="editDescription">Descrição</label>
+                    <textarea id="editDescription" name="editDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editDueDate">Data de conclusão</label>
+                    <input type="date" id="editDueDate" name="editDueDate">
+                </div>
+                <div class="form-group">
+                    <label for="editPriority">Prioridade</label>
+                    <select id="editPriority" name="editPriority">
+                        <option value="pouco importante">Pouco importante</option>
+                        <option value="importante">Importante</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editStatus">Status</label>
+                    <select id="editStatus" name="editStatus">
+                        <option value="pendente">Pendente</option>
+                        <option value="concluída">Concluída</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editCategory">Categoria</label>
+                    <select id="editCategory" name="editCategory">
+                        <option value="pessoal">Pessoal</option>
+                        <option value="profissional">Profissional</option>
+                        <option value="acadêmica">Acadêmica</option>
+                    </select>
+                </div>
+                <button type="submit" class="save-btn">Salvar mudanças</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de criação de tarefa -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nova tarefa</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="title">Título</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Data de conclusão</label>
+                    <input type="date" id="dueDate" name="dueDate">
+                </div>
+                <div class="form-group">
+                    <label for="priority">Prioridade</label>
+                    <select id="priority" name="priority">
+                        <option value="pouco importante">Pouco importante</option>
+                        <option value="importante">Importante</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoria</label>
+                    <select id="category" name="category">
+                        <option value="pessoal">Pessoal</option>
+                        <option value="profissional">Profissional</option>
+                        <option value="academica">Acadêmica</option>
+                    </select>
+                </div>
+                <button type="submit">Criar tarefa</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Página de Tarefas -->
+    <div class="container">
+        <header>
+            <div class="profile">
+                <div class="avatar">DV</div>
+                <h1>Minhas tarefas</h1>
+            </div>
+            <nav>
+                <a href="#" class="active">Lista</a>
+            </nav>
+            <button class="add-task-btn">+ Adicionar uma tarefa</button>
+        </header>
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Data de vencimento</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${task.category}</td>
+                        <td>${task.title}</td>
+                        <td>${task.description}</td>
+                        <td>${formattedDueDate}</td>
+                        <td><span class="priority">${task.priority}</span></td>
+                        <td><span class="status">${task.status}</span></td>
+                        <td>
+                            <button class="edit-btn" data-index="${index}">✏️</button>
+                            <button class="delete-btn" data-index="${index}">🗑️</button>
+                        </td>
+                    </tr>
+                    <!-- Tarefas serão renderizadas aqui -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
